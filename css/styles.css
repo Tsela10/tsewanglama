@@ -1,0 +1,51 @@
+:root{
+  --bg:#0f1724;--card:#0b1220;--muted:#94a3b8;--accent:#4f46e5;--accent-2:#06b6d4;--text:#e6eef8;
+  --radius:12px;--gap:1.25rem;--container:1100px;
+  --font: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{font-size:16px}
+html,body{height:100%}
+body{margin:0;background:linear-gradient(180deg,#071025 0%,#081124 100%);color:var(--text);font-family:var(--font);line-height:1.5;-webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:2rem}
+.site-header{backdrop-filter:blur(6px);position:sticky;top:0;z-index:40;background:rgba(4,6,12,0.4);border-bottom:1px solid rgba(255,255,255,0.03)}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:700;color:var(--text);text-decoration:none}
+.nav-toggle{display:none;background:none;border:0;color:var(--text);font-size:1.25rem}
+.site-nav a{color:var(--muted);text-decoration:none;margin-left:1.25rem}
+.hero{padding:4rem 0}
+.hero-grid{display:grid;grid-template-columns:1fr 320px;gap:2rem;align-items:start}
+.hero-content h1{font-size:2.25rem;margin:0 0 .5rem}
+.lead{color:var(--muted);margin:0 0 1rem}
+.btn{display:inline-block;padding:.6rem 1rem;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text);text-decoration:none}
+.btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));box-shadow:0 6px 18px rgba(79,70,229,0.12);border:0}
+.hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:1.25rem;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+.avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.25rem;color:white;margin-bottom:0.75rem}
+.meta-list{list-style:none;padding:0;margin:0;color:var(--muted)}
+.projects .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.card{background:var(--card);padding:1rem;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+.card h3{margin:0 0 .5rem}
+.card-link{color:var(--accent);text-decoration:none}
+.skills .skill-chips span{display:inline-block;background:rgba(255,255,255,0.03);padding:.35rem .6rem;border-radius:999px;margin:.25rem;color:var(--muted)}
+.contact-form{max-width:680px}
+.form-row{display:flex;flex-direction:column;margin-bottom:0.75rem}
+label{font-size:.9rem;color:var(--muted);margin-bottom:.25rem}
+input,textarea{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);color:var(--text);padding:.6rem;border-radius:8px}
+.form-actions{margin-top:0.5rem}
+.form-status{color:var(--accent);margin-top:.5rem}
+.site-footer{border-top:1px solid rgba(255,255,255,0.03);padding:1.25rem 0;margin-top:3rem}
+.footer-inner{display:flex;align-items:center;justify-content:space-between}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .nav-toggle{display:inline-block}
+  .site-nav{display:none;position:absolute;right:1rem;top:64px;background:rgba(4,6,12,0.9);padding:1rem;border-radius:8px}
+  .site-nav a{display:block;margin:0;padding:.5rem 0}
+}
+
+@media (max-width:480px){
+  .container{padding:1rem}
+  .hero-card{padding:1rem}
+  .hero-content{padding-bottom:0}
+}
+
+img,svg{max-width:100%;height:auto;display:block}
