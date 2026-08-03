@@ -47,5 +47,11 @@ input,textarea{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,2
   .hero-card{padding:1rem}
   .hero-content{padding-bottom:0}
 }
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%; 
+}
 
 img,svg{max-width:100%;height:auto;display:block}
