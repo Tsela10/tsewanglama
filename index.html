@@ -1,40 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Tsewang Lama | Frontend Developer</title>
-
-<meta name="description"
-content="Professional Frontend Developer Portfolio of Tsewang Lama">
-
-<meta name="keywords"
-content="Tsewang Lama, Frontend Developer, Web Designer, JavaScript, React">
-
-css/styles.css
-https://fonts.googleapis.com
-
-https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap
-
-js/script.jsscript>
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tsewang Lama — Frontend Engineer & Creative Developer</title>
+  <meta name="description" content="Portfolio of Tsewang Lama. Creative frontend engineer specializing in interactive digital experiences." />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Deferred JS -->
+  <script defer src="script.js"></script>
 </head>
-
 <body>
 
-<!-- ========= HEADER ========= -->
+  <!-- Interactive Background Canvas -->
+  <canvas id="particleCanvas"></canvas>
 
-<header class="site-header">
+  <!-- Navigation -->
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <a class="logo" href="#">Tsewang<span>.dev</span></a>
+      <button id="navToggle" class="nav-toggle" aria-label="Toggle Navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <nav class="site-nav" id="siteNav">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<div class="container">
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="status-badge">
+            <span class="pulse-dot"></span> Available for new projects
+          </div>
+          <h1>Crafting <span class="gradient-text">Interactive</span> Digital Experiences</h1>
+          <p class="lead">Hi, I'm Tsewang Lama. A frontend engineer building high-performance, accessible, and visually stunning web applications.</p>
+          <div class="hero-ctas">
+            <a class="btn primary" href="#projects">Explore Projects →</a>
+            <a class="btn secondary" href="#contact">Get In Touch</a>
+          </div>
+        </div>
 
-<nav>
+        <div class="hero-card tilt-element reveal">
+          <div class="card-glow"></div>
+          <div class="avatar-wrapper">
+            <div class="avatar">
+              <img src="Sololeveling.jpg" alt="Tsewang Lama Portrait" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400'" />
+            </div>
+          </div>
+          <h3>Tsewang Lama</h3>
+          <p class="muted">Frontend Developer • UI/UX Engineer</p>
+          <ul class="meta-list">
+            <li><span>Location</span> <strong>Remote</strong></li>
+            <li><span>Experience</span> <strong>Frontend / JavaScript</strong></li>
+            <li><span>Email</span> <a id="emailLink" href="mailto:hello@Tsela.dev">hello@Tsela.dev</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-#
-Tsewang Lama
-</a>
+    <!-- About Section -->
+    <section id="about" class="container about reveal">
+      <div class="section-header">
+        <h2>About Me</h2>
+        <p>Combining aesthetic elegance with engineering precision.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I focus on bridging the boundary between visual design and software architecture. My core philosophy centres around user experience, ultra-fast performance, accessible standards, and clean maintainable codebases.
+          </p>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-number" data-target="100">0</span><span>%</span>
+            <span class="stat-label">Performance Focus</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="24">0</span><span>+</span>
+            <span class="stat-label">Projects Completed</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section with Interactive Category Filter -->
+    <section id="projects" class="container projects reveal">
+      <div class="section-header">
+        <h2>Selected Projects</h2>
+        <p>Filter through my latest works by technology category.</p>
+      </div>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="app">Web Apps</button>
+        <button class="filter-btn" data-filter="system">Design Systems</button>
+        <button class="filter-btn" data-filter="performance">Performance</button>
+      </div>
+
+      <div class="grid" id="projectGrid">
+        <article class="card tilt-element" data-category="app">
+          <div class="card-content">
+            <span class="card-tag">Web App</span>
+            <h3>Real-Time Data Dashboard</h3>
+            <p>High-throughput data visualization dashboard built with modular JS and optimized canvas graphs.</p>
+          </div>
+          <a class="card-link" href="#">Live Demo →</a>
+        </article>
+
+        <article class="card tilt-element" data-category="system">
+          <div class="card-content">
+            <span class="card-tag">Design Systems</span>
+            <h3>Enterprise Component Library</h3>
+            <p>Comprehensive dark-mode UI token architecture built for high reusability across web apps.</p>
+          </div>
+          <a class="card-link" href="#">Repository →</a>
+        </article>
+
+        <article class="card tilt-element" data-category="performance">
+          <div class="card-content">
+            <span class="card-tag">Performance</span>
+            <h3>Speed-Optimized Engine</h3>
+            <p>Custom loading framework yielding minimal layout shifts and near-instant load speeds.</p>
+          </div>
+          <a class="card-link" href="#">Details →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Skills Section with Dynamic Interactive Skill Bars -->
+    <section id="skills" class="container skills reveal">
+      <div class="section-header">
+        <h2>Capabilities & Expertise</h2>
+        <p>Interactive breakdown of technologies and proficiency metrics.</p>
+      </div>
+      
+      <div class="skills-wrapper">
+        <div class="skill-bar-item">
+          <div class="skill-info">
+            <span>JavaScript (ES6+) / TypeScript</span>
+            <span class="skill-percent">95%</span>
+          </div>
+          <div class="progress-track"><div class="progress-fill" data-progress="95%"></div></div>
+        </div>
+
+        <div class="skill-bar-item">
+          <div class="skill-info">
+            <span>HTML5 & Semantic Web Architecture</span>
+            <span class="skill-percent">98%</span>
+          </div>
+          <div class="progress-track"><div class="progress-fill" data-progress="98%"></div></div>
+        </div>
+
+        <div class="skill-bar-item">
+          <div class="skill-info">
+            <span>Modern CSS / Glassmorphism / Responsive Design</span>
+            <span class="skill-percent">92%</span>
+          </div>
+          <div class="progress-track"><div class="progress-fill" data-progress="92%"></div></div>
+        </div>
+
+        <div class="skill-bar-item">
+          <div class="skill-info">
+            <span>React & Next.js Frameworks</span>
+            <span class="skill-percent">88%</span>
+          </div>
+          <div class="progress-track"><div class="progress-fill" data-progress="88%"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container contact reveal">
+      <div class="contact-wrapper">
+        <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
+          <h2>Get In Touch</h2>
+          <p>Have a question or want to work together? Drop a message below.</p>
+        </div>
+        <form id="contactForm" class="contact-form">
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your Full Name" required />
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          </div>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="How can I help you?" required></textarea>
+          </div>
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Send Message</button>
+          </div>
+          <p id="formStatus" class="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Tsewang Lama. Crafted with care.</p>
+      <nav class="footer-nav">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+  </html></a>
 
 <ul class="nav-links">
 
