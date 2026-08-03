@@ -20,7 +20,26 @@ body{margin:0;background:linear-gradient(180deg,#071025 0%,#081124 100%);color:v
 .btn{display:inline-block;padding:.6rem 1rem;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text);text-decoration:none}
 .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));box-shadow:0 6px 18px rgba(79,70,229,0.12);border:0}
 .hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:1.25rem;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
-.avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.25rem;color:white;margin-bottom:0.75rem}
+
+/* Updated Avatar Container to mask and fit the image properly */
+.avatar{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,var(--accent),var(--accent-2));
+  margin-bottom: 0.75rem;
+  overflow: hidden;         /* Clips image edges into a circle */
+  border: 2px solid rgba(255, 255, 255, 0.1); /* Subtle glowing edge */
+}
+
+/* Image scaling inside the container */
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* Prevents squishing or stretching */
+  display: block;
+}
+
 .meta-list{list-style:none;padding:0;margin:0;color:var(--muted)}
 .projects .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
 .card{background:var(--card);padding:1rem;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
@@ -35,6 +54,7 @@ input,textarea{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,2
 .form-status{color:var(--accent);margin-top:.5rem}
 .site-footer{border-top:1px solid rgba(255,255,255,0.03);padding:1.25rem 0;margin-top:3rem}
 .footer-inner{display:flex;align-items:center;justify-content:space-between}
+
 @media (max-width:900px){
   .hero-grid{grid-template-columns:1fr}
   .nav-toggle{display:inline-block}
@@ -46,12 +66,6 @@ input,textarea{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,2
   .container{padding:1rem}
   .hero-card{padding:1rem}
   .hero-content{padding-bottom:0}
-}
-.avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%; 
 }
 
 img,svg{max-width:100%;height:auto;display:block}
